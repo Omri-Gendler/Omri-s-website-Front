@@ -1,24 +1,33 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux'
 
-import { carReducer } from './reducers/car.reducer'
-import { userReducer } from './reducers/user.reducer'
-import { reviewReducer } from './reducers/review.reducer'
-import { systemReducer } from './reducers/system.reducer'
+// Import your reducers here when you create them
+// import { carReducer } from './reducers/car.reducer.js'
+// import { userReducer } from './reducers/user.reducer.js'
+// import { reviewReducer } from './reducers/review.reducer.js'
+// import { systemReducer } from './reducers/system.reducer.js'
+
+// Temporary placeholder reducer
+const initialState = {}
+
+const tempReducer = (state = initialState, action) => {
+    switch (action.type) {
+        default:
+            return state
+    }
+}
 
 const rootReducer = combineReducers({
-    carModule: carReducer,
-    userModule: userReducer,
-    systemModule: systemReducer,
-    reviewModule: reviewReducer,
+    // Add your reducers here:
+    // carModule: carReducer,
+    // userModule: userReducer,
+    // reviewModule: reviewReducer,
+    // systemModule: systemReducer,
+    
+    // Temporary placeholder:
+    temp: tempReducer
 })
 
+export const store = createStore(rootReducer)
 
-const middleware = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() : undefined
-export const store = createStore(rootReducer, middleware)
-
-// For debug:
-// store.subscribe(() => {
-//     console.log('**** Store state changed: ****')
-//     console.log('storeState:\n', store.getState())
-//     console.log('*******************************')
-// })
+// For development - you can remove this in production
+window.__store__ = store

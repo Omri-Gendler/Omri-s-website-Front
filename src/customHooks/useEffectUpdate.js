@@ -1,15 +1,14 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react'
 
-
-export const useEffectUpdate = (callBack, dependencies) => {
-
-    const isFirstRender = useRef(true)
-
+export function useEffectUpdate(fn, deps) {
+    const isMountedRef = useRef(false)
+    
     useEffect(() => {
-        if (isFirstRender.current) {
-            isFirstRender.current = false
+        if (!isMountedRef.current) {
+            isMountedRef.current = true
             return
         }
-        callBack()
-    }, dependencies)
+        
+        return fn()
+    }, deps)
 }

@@ -1,26 +1,31 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-export const useForm = (initialState) => {
-    const [fields, setFields] = useState(initialState)
-
+export function useForm(initialFields, cb) {
+    const [fields, setFields] = useState(initialFields)
+    
     function handleChange({ target }) {
-        let { value, name: field, type, checked } = target
-        // value = (type === 'number') ? +value : value
-        switch (type) {
+        const field = target.name
+        let value = target.value
+        
+        switch (target.type) {
             case 'number':
             case 'range':
-                value = +value
+                value = +value || ''
                 break
             case 'checkbox':
-                value = checked
-
-            default: break
+                value = target.checked
+                break
+            default:
+                break
         }
-        setFields((prevFields) => ({ ...prevFields, [field]: value }))
+        
+        setFields(prevFields => ({ ...prevFields, [field]: value }))
     }
-
-
-    return [fields, setFields, handleChange]
-
-
+    
+    function handleSubmit(ev) {
+        ev.preventDefault()
+        cb(fields)
+    }
+    
+    return [fields, handleChange, handleSubmit, setFields]
 }
