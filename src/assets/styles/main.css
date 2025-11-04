@@ -7,11 +7,13 @@
 @import "basics/base";
 @import "basics/forms";
 @import "basics/professional-bg";
+@import "basics/responsive";
 
 @import "RootCmp";
 
 @import "cmps/AboutUs";
-@import "cmps/HomePage";
+@import "pages/HomePage";
+@import "cmps/ProjectsList";
 
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
