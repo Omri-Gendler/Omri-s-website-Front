@@ -1,0 +1,120 @@
+/* AboutMe.css */
+
+.about-me {
+    width: 100%;
+    color: var(--bg-primary);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-section.animate-in .about-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-text h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--bg-primary);
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
+}
+
+.about-text p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    color: var(--clr-gray-300);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-primary);
+}
+
+.about-text p:last-of-type {
+    margin-bottom: 3rem;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.highlight-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--bg-primary);
+    font-family: var(--font-primary);
+    line-height: 1;
+}
+
+.highlight-text {
+    font-size: 0.9rem;
+    color: var(--clr-gray-300);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: var(--font-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .highlight-item {
+        padding: 1rem;
+    }
+    
+    .about-text h3 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-text p:last-of-type {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+    
+    .highlight-number {
+        font-size: 2rem;
+    }
+    
+    .highlight-text {
+        text-transform: none;
+        font-size: 0.85rem;
+    }
+}

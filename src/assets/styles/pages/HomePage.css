@@ -97,7 +97,84 @@
   font-weight: 400;
 }
 
-/* Minimal navigation hint */
+/* Contact Buttons */
+.contact-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--text-secondary);
+  background: transparent;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.contact-btn:hover {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.btn-text {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* Phone button specific styling */
+.phone-btn:hover .btn-icon {
+  animation: phoneRing 0.5s ease-in-out;
+}
+
+@keyframes phoneRing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* WhatsApp button specific styling */
+.whatsapp-btn:hover .btn-icon {
+  animation: messageFloat 0.6s ease-in-out;
+}
+
+@keyframes messageFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Minimal navigation hint - moved down */
 .hero-section::after {
   content: '';
   position: absolute;
@@ -134,6 +211,18 @@
     font-size: clamp(1rem, 4vw, 1.5rem);
     margin-top: 2rem;
   }
+  
+  .contact-buttons {
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-direction: column;
+  }
+  
+  .contact-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -148,6 +237,17 @@
   .hero-content h1 {
     margin-bottom: 2rem;
   }
+  
+  .contact-buttons {
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-direction: row;
+  }
+  
+  .contact-btn {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -157,6 +257,18 @@
   
   .hero-content {
     padding: 0 5%;
+  }
+  
+  .contact-buttons {
+    gap: 2rem;
+    margin-top: 4rem;
+    flex-direction: row;
+  }
+  
+  .contact-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    min-width: 180px;
   }
   
   .hero-section::after {

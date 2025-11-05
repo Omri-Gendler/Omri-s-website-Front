@@ -1,3 +1,264 @@
-.home {
+/* HomePage.css */
+
+.home-page {
+    overflow-x: hidden;
+}
+
+/* Section Base Styles */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.section.animate-in .section-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
+    margin: 0;
+}
+
+/* Hero Section - White Background */
+.hero-section {
+    background: var(--bg-primary);
+    padding-top: 100px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-family: var(--font-primary);
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.hero-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.2rem);
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-family: var(--font-primary);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.tech-highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+    background: linear-gradient(120deg, transparent 0%, var(--clr-gray-100) 0%);
+    background-size: 100% 40%;
+    background-repeat: no-repeat;
+    background-position: 0 85%;
+    transition: background-size 0.3s ease;
+}
+
+.hero-cta {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-family: var(--font-primary);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.contact-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.phone-btn {
+    background: var(--clr-primary);
+    color: var(--bg-primary);
+}
+
+.phone-btn:hover {
+    background: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--clr-primary);
+}
+
+.whatsapp-btn:hover {
+    background: var(--clr-primary);
+    color: var(--bg-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Skills Section - Light Gray Background */
+.skills-section {
+    background: var(--clr-gray-50);
+    padding: 6rem 0;
+}
+
+.skills-section .section-title {
+    color: var(--text-primary);
+}
+
+.skills-section .section-subtitle {
+    color: var(--text-secondary);
+}
+
+/* Projects Section - White Background */
+.projects-section {
+    background: var(--bg-primary);
+    padding: 6rem 0;
+}
+
+/* About Section - Dark Background */
+.about-section {
+    background: var(--text-primary);
+    padding: 6rem 0;
+}
+
+.about-section .section-title {
+    color: var(--bg-primary);
+}
+
+.about-section .section-subtitle {
+    color: var(--clr-gray-300);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Snap for Better UX */
+.home-page {
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    scroll-snap-align: start;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
     
+    .section-content {
+        padding: 0 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .skills-section,
+    .projects-section,
+    .about-section {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
 }

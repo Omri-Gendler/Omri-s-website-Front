@@ -1,0 +1,229 @@
+/* TechSkills - Sophisticated Minimal Design */
+
+.tech-skills {
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Header Section */
+.tech-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+}
+
+.tech-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Skills Showcase */
+.skills-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--text-secondary);
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+.skill-item:hover {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+  transform: translateY(-4px);
+}
+
+.skill-item:hover .skill-info h3,
+.skill-item:hover .skill-info span {
+  color: var(--bg-primary);
+}
+
+.skill-item:hover .skill-icon img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.1);
+}
+
+/* Skill Icon */
+.skill-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skill-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(100%) contrast(1000%) brightness(0);
+}
+
+/* Skill Information */
+.skill-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+.skill-category {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  transition: color 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .tech-skills {
+    padding: 4rem 0;
+  }
+  
+  .tech-container {
+    padding: 0 8%;
+  }
+  
+  .tech-header {
+    margin-bottom: 3rem;
+  }
+  
+  .tech-header h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .skills-showcase {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skill-name {
+    font-size: 1.1rem;
+  }
+  
+  .skill-category {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tech-skills {
+    padding: 6rem 0;
+  }
+  
+  .skills-showcase {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .tech-skills {
+    padding: 8rem 0;
+  }
+  
+  .skills-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .skill-item {
+    padding: 2.5rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skill-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .skill-item:hover {
+    transform: none;
+  }
+}

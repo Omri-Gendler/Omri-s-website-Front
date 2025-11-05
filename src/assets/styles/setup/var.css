@@ -22,6 +22,18 @@
   --gray4: #1a1a1a;
   --gray5: #000000;
 
+  /* Extended gray palette for sections */
+  --clr-gray-50: #fafafa;
+  --clr-gray-100: #f5f5f5;
+  --clr-gray-200: #e5e5e5;
+  --clr-gray-300: #d4d4d4;
+  --clr-gray-400: #a3a3a3;
+  --clr-gray-500: #737373;
+  --clr-gray-600: #525252;
+  --clr-gray-700: #404040;
+  --clr-gray-800: #262626;
+  --clr-gray-900: #171717;
+
   --success: #000000;
   --error: #000000;
 

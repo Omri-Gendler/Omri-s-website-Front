@@ -1,0 +1,39 @@
+/* ProjectsPage.css */
+
+.projects-page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    padding-top: 100px;
+    padding-bottom: 4rem;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.projects-container h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
+}
+
+.projects-container p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
+}
+
+@media (max-width: 768px) {
+    .projects-page {
+        padding-top: 80px;
+    }
+    
+    .projects-container {
+        padding: 0 1rem;
+    }
+}

@@ -12,8 +12,13 @@
 @import "RootCmp";
 
 @import "cmps/AboutUs";
-@import "pages/HomePage";
+@import "cmps/AboutMe";
+@import "cmps/HomePage";
+@import "cmps/ProjectsPage";
+@import "cmps/SkillsPage";
 @import "cmps/ProjectsList";
+@import "cmps/TechSkills";
+@import "cmps/ScrollNavigation";
 
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
