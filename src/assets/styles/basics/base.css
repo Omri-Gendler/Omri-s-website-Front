@@ -9,8 +9,8 @@ body {
     font-family: var(--font-primary);
     color: var(--text-primary);
     
-    /* Clean, minimal background */
-    background: var(--bg-primary);
+    /* Warm, inviting background */
+    background: var(--bg-gradient);
     min-height: 100vh;
     position: relative;
     

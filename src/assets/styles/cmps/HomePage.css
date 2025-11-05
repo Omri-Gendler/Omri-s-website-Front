@@ -96,7 +96,7 @@
 .tech-highlight {
     color: var(--text-primary);
     font-weight: 600;
-    background: linear-gradient(120deg, transparent 0%, var(--clr-gray-100) 0%);
+    background: linear-gradient(120deg, transparent 0%, #f4e6d3 0%);
     background-size: 100% 40%;
     background-repeat: no-repeat;
     background-position: 0 85%;
@@ -176,9 +176,9 @@
     box-shadow: 0 8px 25px rgba(220, 38, 38, 0.25);
 }
 
-/* Skills Section - Light Gray Background */
+/* Skills Section - Warm Light Background */
 .skills-section {
-    background: var(--clr-gray-50);
+    background: linear-gradient(135deg, var(--clr-gray-50) 0%, var(--clr-gray-100) 100%);
     padding: 6rem 0;
 }
 
@@ -196,9 +196,9 @@
     padding: 6rem 0;
 }
 
-/* About Section - Dark Background */
+/* About Section - Warm Dark Background */
 .about-section {
-    background: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
     padding: 6rem 0;
 }
 

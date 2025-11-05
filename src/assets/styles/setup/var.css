@@ -22,27 +22,27 @@
   --gray4: #1a1a1a;
   --gray5: #000000;
 
-  /* Extended gray palette for sections */
-  --clr-gray-50: #fafafa;
-  --clr-gray-100: #f5f5f5;
-  --clr-gray-200: #e5e5e5;
-  --clr-gray-300: #d4d4d4;
-  --clr-gray-400: #a3a3a3;
-  --clr-gray-500: #737373;
-  --clr-gray-600: #525252;
-  --clr-gray-700: #404040;
-  --clr-gray-800: #262626;
-  --clr-gray-900: #171717;
+  /* Extended warm palette for sections */
+  --clr-gray-50: #faf8f3; /* Warm very light cream */
+  --clr-gray-100: #f5f2ec; /* Warm light beige */
+  --clr-gray-200: #ede7dc; /* Warm light tan */
+  --clr-gray-300: #d6cbb8; /* Warm medium beige */
+  --clr-gray-400: #b8a689; /* Warm medium brown */
+  --clr-gray-500: #8b7355; /* Warm brown */
+  --clr-gray-600: #6b5b42; /* Rich warm brown */
+  --clr-gray-700: #4a3f2e; /* Dark warm brown */
+  --clr-gray-800: #332b1f; /* Very dark warm brown */
+  --clr-gray-900: #1f1b14; /* Almost black warm brown */
 
   --success: #000000;
   --error: #000000;
 
-  /* Dramatic Background System */
-  --bg-primary: #ffffff;
-  --bg-secondary: #000000;
-  --bg-accent: #f5f5f5;
-  --bg-dark: #000000;
-  --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  /* Warm Background System */
+  --bg-primary: #fefcf7; /* Warm white with cream undertone */
+  --bg-secondary: #1a1512; /* Warm dark brown */
+  --bg-accent: #f5f2ec; /* Warm light beige */
+  --bg-dark: #2d1b0e; /* Rich warm brown */
+  --bg-gradient: linear-gradient(135deg, #fefcf7 0%, #f5f2ec 100%);
   --bg-pattern: none;
   
   /* Typography contrast */
