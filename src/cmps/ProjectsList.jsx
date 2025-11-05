@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,6 +17,24 @@ export function ProjectsList() {
         },
         {
             id: 2,
+            title: "MineSweeper",
+            description: "My project recreating the classic Minesweeper game using React for the frontend and Node.js for the backend",
+            tech: ["React", "Redux", "Node.js", "MongoDB"],
+            status: "Completed",
+            link: "https://omri-gendler.github.io/Minesweeper/",
+            image: ["/img/minesweeper.png"]
+        },
+        {
+            id: 3,
+            title: "Meme Generator",
+            description: "My Meme Generator project allowing users to create and share custom memes online",
+            tech: ["React", "Redux", "Node.js", "MongoDB"],
+            status: "Completed",
+            link: "https://omri-gendler.github.io/Meme_Generator/index.html",
+            image: ["/img/meme.png"]
+        },
+        {
+            id: 4,
             title: "Miss Bugs",
             description: "My 3rd project for the Fullstack Bootcamp at Coding Academy",
             tech: ["React", "Redux", "Node.js", "MongoDB"],
@@ -24,6 +43,22 @@ export function ProjectsList() {
             image: ["/img/MissBugs1.png", "/img/MissBugs2.png"]
         },
     ]
+
+    const preloadImages = (images) => {
+        images.forEach(src => {
+            const img = new Image()
+            img.src = src
+        })
+    }
+
+    // Preload first image of each project for faster loading
+    React.useEffect(() => {
+        projects.forEach(project => {
+            if (project.image && project.image.length > 0) {
+                preloadImages([project.image[0]])
+            }
+        })
+    }, [])
 
     const handleProjectClick = (project) => {
         // Open external link in new tab
@@ -53,7 +88,23 @@ export function ProjectsList() {
                                 <div className="image-track">
                                     {project.image.map((imgSrc, index) => (
                                         <div key={index} className="image-slide">
-                                            <img src={imgSrc} alt={`${project.title} screenshot ${index + 1}`} />
+                                            <img 
+                                                src={imgSrc} 
+                                                alt={`${project.title} screenshot ${index + 1}`}
+                                                loading="eager"
+                                                onLoad={(e) => {
+                                                    e.target.style.opacity = '1';
+                                                    if (index === 0) {
+                                                        // Mark as loaded when first image loads
+                                                        e.target.closest('.project-image').classList.add('images-loaded');
+                                                    }
+                                                }}
+                                                onError={(e) => {
+                                                    console.warn(`Failed to load image: ${imgSrc}`);
+                                                    e.target.style.display = 'none';
+                                                }}
+                                                style={{ opacity: '0', transition: 'opacity 0.5s ease' }}
+                                            />
                                         </div>
                                     ))}
                                 </div>

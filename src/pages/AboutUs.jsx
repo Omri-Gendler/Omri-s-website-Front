@@ -6,10 +6,8 @@ export function AboutUs() {
             <div className="about-container">
                 <div className="about-intro">
                     <p>
-                        My name is Carmel Amarilio. I am a Practical Engineer in Electronics and Computer Science with hands-on experience in full-stack development 
-                        and professional expertise in DevOps engineering. I'm passionate about coding, automation, and building scalable infrastructure. Currently 
-                        working as a coding instructor and DevOps developer. I also served as an officer in the IDF Technology Corps, demonstrating strong problem-solving 
-                        abilities, team leadership, and innovative thinking.
+                        I'm Omri Gendler, a Full Stack Developer based in Tel Aviv, transitioning from an elite background in the Israeli Intelligence Corps (Unit 8200). My service, which earned me a Commander's Citation for Excellence, involved managing sensitive technical systems and working closely with full-stack developers on a unit website. This experience honed my strong problem-solving skills  and sparked my passion for code.
+                        After completing an intensive Full Stack Development program at Coding Academy , I am proficient in JavaScript, React, Node.js, Python, and SQL. I am eager to apply my unique analytical background and leadership experience to build innovative software solutions.
                     </p>
                 </div>
 
@@ -19,9 +17,9 @@ export function AboutUs() {
                         <div className="experience-item">
                             <div className="experience-period">2025-Present:</div>
                             <div className="experience-content">
-                                <h3>Develeap</h3>
-                                <span className="position">DevOps engineer</span>
-                                <p>Implemented CI/CD pipelines, automated deployments, and managed cloud infrastructure.</p>
+                                <h3>Arbitrip</h3>
+                                <span className="position">Customer Success</span>
+                                <p>Implemented customer feedback loops and improved user onboarding processes.</p>
                             </div>
                         </div>
 
@@ -29,50 +27,22 @@ export function AboutUs() {
                             <div className="experience-period">2024-2025:</div>
                             <div className="experience-content">
                                 <h3>MisterBit</h3>
-                                <span className="position">Coding Instructor & Full-stack Developer</span>
-                                <p>Developed full-stack web apps; mentored students; created and maintained internal projects and code examples.</p>
-                            </div>
-                        </div>
-
-                        <div className="experience-item">
-                            <div className="experience-period">2023-2024:</div>
-                            <div className="experience-content">
-                                <h3>YouML</h3>
-                                <span className="position">Frontend Developer internship</span>
-                                <p>Built responsive interfaces with React and TypeScript; integrated APIs.</p>
+                                <span className="position">Full-stack Developer</span>
+                                <p>Developed full-stack web apps; Created and maintained internal projects and code examples.</p>
                             </div>
                         </div>
 
                         <div className="experience-item">
                             <div className="experience-period">2019-2023:</div>
                             <div className="experience-content">
-                                <h3>IDF – Captain in the Technology and Support Corps</h3>
-                                <p>Head of Technology and Maintenance Department.</p>
+                                <h3>IDF – 8200 - Technology and Maintenance Department</h3>
+                                <p>Led a team in the development and maintenance of technological systems.</p>
                             </div>
                         </div>
 
-                        <div className="experience-item">
-                            <div className="experience-period">2017-2019:</div>
-                            <div className="experience-content">
-                                <h3>Ort Hermelin College – Assistant lecture & Private Tutor</h3>
-                                <p>Provided academic support in Mathematics and Programming.</p>
-                            </div>
-                        </div>
                     </div>
                 </section>
 
-                <section className="education">
-                    <h2>Education:</h2>
-                    <div className="education-list">
-                        <div className="education-item">
-                            <div className="education-period">2025:</div>
-                            <div className="education-content">
-                                <h3>Develeap</h3>
-                                <span className="degree">DevOps Expert Bootcamp</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
     )

@@ -18,14 +18,25 @@
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-family: var(--font-primary);
 }
 
-.projects-container p {
+.projects-container > p {
     font-size: 1.125rem;
     color: var(--text-secondary);
     font-family: var(--font-primary);
+    margin-bottom: 3rem;
+}
+
+/* Override ProjectsList styles when used in dedicated page */
+.projects-page .projects-list {
+    padding: 2rem 0 0 0;
+    background: transparent;
+}
+
+.projects-page .projects-header {
+    display: none; /* Hide duplicate header since we have page header */
 }
 
 @media (max-width: 768px) {
@@ -35,5 +46,13 @@
     
     .projects-container {
         padding: 0 1rem;
+    }
+    
+    .projects-container > p {
+        margin-bottom: 2rem;
+    }
+    
+    .projects-page .projects-list {
+        padding: 1rem 0 0 0;
     }
 }
