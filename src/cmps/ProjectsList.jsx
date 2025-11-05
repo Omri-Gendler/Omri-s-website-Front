@@ -85,7 +85,7 @@ export function ProjectsList() {
                                 {project.status}
                             </div>
                             <div className="image-carousel">
-                                <div className="image-track">
+                                <div className="image-track" data-count={project.image.length}>
                                     {project.image.map((imgSrc, index) => (
                                         <div key={index} className="image-slide">
                                             <img 
@@ -108,11 +108,13 @@ export function ProjectsList() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="carousel-indicators">
-                                    {project.image.map((_, index) => (
-                                        <div key={index} className="indicator"></div>
-                                    ))}
-                                </div>
+                                {project.image.length > 1 && (
+                                    <div className="carousel-indicators" data-count={project.image.length}>
+                                        {project.image.map((_, index) => (
+                                            <div key={index} className="indicator"></div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
 

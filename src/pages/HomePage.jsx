@@ -69,6 +69,10 @@ export function HomePage() {
                                 <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src="/img/whatsapp.svg" alt="" /></span>
                                 <span className="btn-text">WhatsApp</span>
                             </a>
+                            <a href="mailto:omrig999@gmail.com" className="contact-btn email-btn">
+                                <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src="/img/mail.svg" alt="" /></span>
+                                <span className="btn-text">Email</span>
+                            </a>
                         </div>
                     </div>
                 </div>

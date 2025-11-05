@@ -300,9 +300,7 @@
 
 .image-track {
   display: flex;
-  width: 500%; /* 5 images = 500% */
   height: 100%;
-  animation: slideShow 15s infinite;
   transition: transform 0.5s ease-in-out;
   margin: 0;
   padding: 0;
@@ -312,7 +310,6 @@
 }
 
 .image-slide {
-  width: 20%; /* 100% / 5 images = 20% each */
   height: 100%;
   flex-shrink: 0;
   position: relative;
@@ -338,18 +335,85 @@
   z-index: 4;
 }
 
-/* Automatic slideshow animation */
-@keyframes slideShow {
-  0% { transform: translateX(0); }
-  18% { transform: translateX(0); }
-  20% { transform: translateX(-20%); }
-  38% { transform: translateX(-20%); }
-  40% { transform: translateX(-40%); }
-  58% { transform: translateX(-40%); }
-  60% { transform: translateX(-60%); }
-  78% { transform: translateX(-60%); }
-  80% { transform: translateX(-80%); }
-  98% { transform: translateX(-80%); }
+/* Dynamic slideshow animations for different image counts */
+
+/* Single image - no animation */
+.image-track[data-count="1"] {
+  width: 100%;
+  animation: none;
+}
+
+.image-track[data-count="1"] .image-slide {
+  width: 100%;
+}
+
+/* Two images */
+.image-track[data-count="2"] {
+  width: 200%;
+  animation: slideShow2 8s infinite;
+}
+
+.image-track[data-count="2"] .image-slide {
+  width: 50%;
+}
+
+@keyframes slideShow2 {
+  0%, 45% { transform: translateX(0); }
+  50%, 95% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Three images */
+.image-track[data-count="3"] {
+  width: 300%;
+  animation: slideShow3 12s infinite;
+}
+
+.image-track[data-count="3"] .image-slide {
+  width: 33.333%;
+}
+
+@keyframes slideShow3 {
+  0%, 30% { transform: translateX(0); }
+  33%, 63% { transform: translateX(-33.333%); }
+  66%, 96% { transform: translateX(-66.666%); }
+  100% { transform: translateX(0); }
+}
+
+/* Four images */
+.image-track[data-count="4"] {
+  width: 400%;
+  animation: slideShow4 16s infinite;
+}
+
+.image-track[data-count="4"] .image-slide {
+  width: 25%;
+}
+
+@keyframes slideShow4 {
+  0%, 22% { transform: translateX(0); }
+  25%, 47% { transform: translateX(-25%); }
+  50%, 72% { transform: translateX(-50%); }
+  75%, 97% { transform: translateX(-75%); }
+  100% { transform: translateX(0); }
+}
+
+/* Five images */
+.image-track[data-count="5"] {
+  width: 500%;
+  animation: slideShow5 20s infinite;
+}
+
+.image-track[data-count="5"] .image-slide {
+  width: 20%;
+}
+
+@keyframes slideShow5 {
+  0%, 18% { transform: translateX(0); }
+  20%, 38% { transform: translateX(-20%); }
+  40%, 58% { transform: translateX(-40%); }
+  60%, 78% { transform: translateX(-60%); }
+  80%, 98% { transform: translateX(-80%); }
   100% { transform: translateX(0); }
 }
 
@@ -376,18 +440,65 @@
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
-  animation: indicatorCycle 15s infinite;
 }
 
-.indicator:nth-child(1) { animation-delay: 0s; }
-.indicator:nth-child(2) { animation-delay: 3s; }
-.indicator:nth-child(3) { animation-delay: 6s; }
-.indicator:nth-child(4) { animation-delay: 9s; }
-.indicator:nth-child(5) { animation-delay: 12s; }
+/* Dynamic indicator animations based on image count */
 
-@keyframes indicatorCycle {
-  0%, 16% { background: rgba(255, 255, 255, 0.5); transform: scale(1); }
-  17%, 19% { background: rgba(255, 255, 255, 1); transform: scale(1.2); }
+/* Two images indicators */
+.carousel-indicators[data-count="2"] .indicator {
+  animation: indicatorCycle2 8s infinite;
+}
+
+.carousel-indicators[data-count="2"] .indicator:nth-child(1) { animation-delay: 0s; }
+.carousel-indicators[data-count="2"] .indicator:nth-child(2) { animation-delay: 4s; }
+
+@keyframes indicatorCycle2 {
+  0%, 45% { background: rgba(255, 255, 255, 1); transform: scale(1.2); }
+  50%, 100% { background: rgba(255, 255, 255, 0.5); transform: scale(1); }
+}
+
+/* Three images indicators */
+.carousel-indicators[data-count="3"] .indicator {
+  animation: indicatorCycle3 12s infinite;
+}
+
+.carousel-indicators[data-count="3"] .indicator:nth-child(1) { animation-delay: 0s; }
+.carousel-indicators[data-count="3"] .indicator:nth-child(2) { animation-delay: 4s; }
+.carousel-indicators[data-count="3"] .indicator:nth-child(3) { animation-delay: 8s; }
+
+@keyframes indicatorCycle3 {
+  0%, 30% { background: rgba(255, 255, 255, 1); transform: scale(1.2); }
+  33%, 100% { background: rgba(255, 255, 255, 0.5); transform: scale(1); }
+}
+
+/* Four images indicators */
+.carousel-indicators[data-count="4"] .indicator {
+  animation: indicatorCycle4 16s infinite;
+}
+
+.carousel-indicators[data-count="4"] .indicator:nth-child(1) { animation-delay: 0s; }
+.carousel-indicators[data-count="4"] .indicator:nth-child(2) { animation-delay: 4s; }
+.carousel-indicators[data-count="4"] .indicator:nth-child(3) { animation-delay: 8s; }
+.carousel-indicators[data-count="4"] .indicator:nth-child(4) { animation-delay: 12s; }
+
+@keyframes indicatorCycle4 {
+  0%, 22% { background: rgba(255, 255, 255, 1); transform: scale(1.2); }
+  25%, 100% { background: rgba(255, 255, 255, 0.5); transform: scale(1); }
+}
+
+/* Five images indicators */
+.carousel-indicators[data-count="5"] .indicator {
+  animation: indicatorCycle5 20s infinite;
+}
+
+.carousel-indicators[data-count="5"] .indicator:nth-child(1) { animation-delay: 0s; }
+.carousel-indicators[data-count="5"] .indicator:nth-child(2) { animation-delay: 4s; }
+.carousel-indicators[data-count="5"] .indicator:nth-child(3) { animation-delay: 8s; }
+.carousel-indicators[data-count="5"] .indicator:nth-child(4) { animation-delay: 12s; }
+.carousel-indicators[data-count="5"] .indicator:nth-child(5) { animation-delay: 16s; }
+
+@keyframes indicatorCycle5 {
+  0%, 18% { background: rgba(255, 255, 255, 1); transform: scale(1.2); }
   20%, 100% { background: rgba(255, 255, 255, 0.5); transform: scale(1); }
 }
 

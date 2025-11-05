@@ -143,9 +143,9 @@
 }
 
 .phone-btn:hover {
-    background: var(--text-primary);
+    background: #2563eb; /* Blue hover */
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
 }
 
 .whatsapp-btn {
@@ -155,10 +155,25 @@
 }
 
 .whatsapp-btn:hover {
-    background: var(--clr-primary);
+    background: #25d366; /* WhatsApp green */
     color: var(--bg-primary);
+    border-color: #25d366;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+}
+
+.email-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--clr-primary);
+}
+
+.email-btn:hover {
+    background: #dc2626; /* Red hover for email */
+    color: var(--bg-primary);
+    border-color: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.25);
 }
 
 /* Skills Section - Light Gray Background */
