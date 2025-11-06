@@ -1,15 +1,17 @@
+import { getAssetPath } from '../services/asset.service.js'
+
 export function TechSkills() {
     const skills = [
-        { name: 'React', icon: '/img/react.svg', category: 'Frontend' },
-        { name: 'Node.js', icon: '/img/nodejs-icon.svg', category: 'Backend' },
-        { name: 'Redux', icon: '/img/js_redux-icon.svg', category: 'State Management' },
-        { name: 'MongoDB', icon: '/img/mongodb-ar21~bgwhite.svg', category: 'Database' },
-        { name: 'JavaScript', icon: '/img/javascript-icon.svg', category: 'Language' },
-        { name: 'CSS', icon: '/img/w3_css-ar21~old.svg', category: 'Styling' },
-        { name: 'Vite', icon: '/img/vite.svg', category: 'Tooling' },
-        { name: 'Express.js', icon: '/img/expressjs-icon.svg', category: 'Backend' },
-        { name: 'Git', icon: '/img/git.svg', category: 'Version Control' },
-        { name: 'HTML5', icon: '/img/html5.svg', category: 'Markup Language' },
+        { name: 'React', icon: getAssetPath('img/react.svg'), category: 'Frontend' },
+        { name: 'Node.js', icon: getAssetPath('img/nodejs-icon.svg'), category: 'Backend' },
+        { name: 'Redux', icon: getAssetPath('img/js_redux-icon.svg'), category: 'State Management' },
+        { name: 'MongoDB', icon: getAssetPath('img/mongodb-ar21~bgwhite.svg'), category: 'Database' },
+        { name: 'JavaScript', icon: getAssetPath('img/javascript-icon.svg'), category: 'Language' },
+        { name: 'CSS', icon: getAssetPath('img/w3_css-ar21~old.svg'), category: 'Styling' },
+        { name: 'Vite', icon: getAssetPath('img/vite.svg'), category: 'Tooling' },
+        { name: 'Express.js', icon: getAssetPath('img/expressjs-icon.svg'), category: 'Backend' },
+        { name: 'Git', icon: getAssetPath('img/git.svg'), category: 'Version Control' },
+        { name: 'HTML5', icon: getAssetPath('img/html5.svg'), category: 'Markup Language' },
     ];
 
     return (

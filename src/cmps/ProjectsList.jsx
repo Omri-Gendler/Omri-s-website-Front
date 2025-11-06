@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { getAssetPath } from '../services/asset.service.js'
 
 
 export function ProjectsList() {
@@ -13,7 +14,7 @@ export function ProjectsList() {
             tech: ["React", "Redux", "Node.js", "MongoDB"],
             status: "Completed",
             link: "https://offbeat-front.onrender.com/",
-            image: ["/img/offbeat1.png", "/img/offbeat2.png", "/img/offbeat3.png", "/img/offbeat4.png", "/img/offbeat5.png"]
+            image: [getAssetPath("img/offbeat1.png"), getAssetPath("img/offbeat2.png"), getAssetPath("img/offbeat3.png"), getAssetPath("img/offbeat4.png"), getAssetPath("img/offbeat5.png")]
         },
         {
             id: 2,
@@ -22,7 +23,7 @@ export function ProjectsList() {
             tech: ["React", "Redux", "Node.js", "MongoDB"],
             status: "Completed",
             link: "https://omri-gendler.github.io/Minesweeper/",
-            image: ["/img/minesweeper.png"]
+            image: [getAssetPath("img/minesweeper.png")]
         },
         {
             id: 3,
@@ -31,7 +32,7 @@ export function ProjectsList() {
             tech: ["React", "Redux", "Node.js", "MongoDB"],
             status: "Completed",
             link: "https://omri-gendler.github.io/Meme_Generator/index.html",
-            image: ["/img/meme.png"]
+            image: [getAssetPath("img/meme.png")]
         },
         {
             id: 4,
@@ -40,7 +41,7 @@ export function ProjectsList() {
             tech: ["React", "Redux", "Node.js", "MongoDB"],
             status: "Completed",
             link: "https://ex-bugs.onrender.com/",
-            image: ["/img/MissBugs1.png", "/img/MissBugs2.png"]
+            image: [getAssetPath("img/MissBugs1.png"), getAssetPath("img/MissBugs2.png")]
         },
     ]
 

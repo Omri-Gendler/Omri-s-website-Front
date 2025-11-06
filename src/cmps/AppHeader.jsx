@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { getAssetPath } from '../services/asset.service.js'
 
 export function AppHeader() {
     return (
@@ -7,7 +8,7 @@ export function AppHeader() {
             <div className="header-container">
                 <div className="logo-section">
                     <div className="profile-img">
-                        <div className="profile-placeholder"><img src="/img/Omri.png" alt="" /></div>
+                        <div className="profile-placeholder"><img src={getAssetPath('img/omrig.png')} alt="" /></div>
                     </div>
                     <h1 className="name">Omri Gendler</h1>
                 </div>

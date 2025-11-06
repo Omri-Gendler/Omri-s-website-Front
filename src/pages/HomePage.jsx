@@ -2,6 +2,7 @@ import { ProjectsList } from '../cmps/ProjectsList'
 import { AboutMe } from '../cmps/AboutMe'
 import { TechSkills } from '../cmps/TechSkills'
 import { ScrollNavigation } from '../cmps/ScrollNavigation'
+import { getAssetPath } from '../services/asset.service.js'
 import { useEffect } from 'react'
 
 export function HomePage() {
@@ -66,11 +67,11 @@ export function HomePage() {
                                 <span className="btn-text">+972 50 527 7818</span>
                             </a>
                             <a href="https://wa.me/972505277818" target="_blank" rel="noopener noreferrer" className="contact-btn whatsapp-btn">
-                                <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src="/img/whatsapp.svg" alt="" /></span>
+                                <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src={getAssetPath('img/whatsapp.svg')} alt="" /></span>
                                 <span className="btn-text">WhatsApp</span>
                             </a>
                             <a href="mailto:omrig999@gmail.com" className="contact-btn email-btn">
-                                <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src="/img/mail.svg" alt="" /></span>
+                                <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src={getAssetPath('img/mail.svg')} alt="" /></span>
                                 <span className="btn-text">Email</span>
                             </a>
                         </div>
