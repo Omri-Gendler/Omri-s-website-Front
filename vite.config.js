@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: '/Omri-s-website-Front/',
+	base: process.env.NODE_ENV === 'production' ? '/Omri-s-website-Front/' : '/',
 	preview: {
 		host: '0.0.0.0',
 		port: process.env.PORT || 4173,

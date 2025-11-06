@@ -14,7 +14,7 @@ import './assets/styles/main.css'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<Provider store={store}>
-		<Router>
+		<Router basename={import.meta.env.PROD ? '/Omri-s-website-Front' : ''}>
 			<RootCmp />
 		</Router>
 	</Provider>
