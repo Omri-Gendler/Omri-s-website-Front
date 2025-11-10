@@ -7,6 +7,24 @@ import { useEffect } from 'react'
 
 export function HomePage() {
     useEffect(() => {
+        // Load LinkedIn badge script
+        const script = document.createElement('script')
+        script.src = 'https://platform.linkedin.com/badges/js/profile.js'
+        script.async = true
+        script.defer = true
+        script.type = 'text/javascript'
+        document.head.appendChild(script)
+
+        // Cleanup function
+        return () => {
+            const existingScript = document.querySelector('script[src="https://platform.linkedin.com/badges/js/profile.js"]')
+            if (existingScript) {
+                document.head.removeChild(existingScript)
+            }
+        }
+    }, [])
+
+    useEffect(() => {
         // Smooth scrolling animation on scroll
         const observerOptions = {
             root: null,
@@ -74,6 +92,11 @@ export function HomePage() {
                                 <span className="btn-icon" style={{height: '20px', width: '20px'}}><img src={getAssetPath('img/mail.svg')} alt="" /></span>
                                 <span className="btn-text">Email</span>
                             </a>
+                            <div className="linkedin-badge-wrapper">
+                                <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="small" data-theme="light" data-type="HORIZONTAL" data-vanity="omri-gendler-893014344" data-version="v1">
+                                    <a className="badge-base__link LI-simple-link" href="https://il.linkedin.com/in/omri-gendler-893014344?trk=profile-badge"></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

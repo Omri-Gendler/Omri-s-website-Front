@@ -12,7 +12,7 @@ export function AppHeader() {
                     </div>
                     <h1 className="name">Omri Gendler</h1>
                 </div>
-                
+
                 <nav className="main-nav">
                     <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         HOME

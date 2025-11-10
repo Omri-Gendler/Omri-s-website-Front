@@ -107,6 +107,22 @@
   flex-wrap: wrap;
 }
 
+/* LinkedIn Badge Styling */
+.linkedin-badge-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkedin-badge-wrapper .LI-profile-badge {
+  transform: scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linkedin-badge-wrapper:hover .LI-profile-badge {
+  transform: scale(0.85) translateY(-2px);
+}
+
 .contact-btn {
   display: inline-flex;
   align-items: center;
@@ -222,6 +238,14 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
     min-width: 160px;
+  }
+  
+  .linkedin-badge-wrapper .LI-profile-badge {
+    transform: scale(0.7);
+  }
+  
+  .linkedin-badge-wrapper:hover .LI-profile-badge {
+    transform: scale(0.75) translateY(-2px);
   }
 }
 
