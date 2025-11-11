@@ -107,20 +107,14 @@
   flex-wrap: wrap;
 }
 
-/* LinkedIn Badge Styling */
-.linkedin-badge-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* LinkedIn button specific styling */
+.linkedin-btn:hover .btn-icon {
+  animation: linkedinBounce 0.6s ease-in-out;
 }
 
-.linkedin-badge-wrapper .LI-profile-badge {
-  transform: scale(0.8);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.linkedin-badge-wrapper:hover .LI-profile-badge {
-  transform: scale(0.85) translateY(-2px);
+@keyframes linkedinBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 .contact-btn {
@@ -190,6 +184,16 @@
   50% { transform: translateY(-3px); }
 }
 
+/* GitHub button specific styling */
+.github-btn:hover .btn-icon {
+  animation: githubPulse 0.8s ease-in-out;
+}
+
+@keyframes githubPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
 /* Minimal navigation hint - moved down */
 .hero-section::after {
   content: '';
@@ -238,14 +242,6 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
     min-width: 160px;
-  }
-  
-  .linkedin-badge-wrapper .LI-profile-badge {
-    transform: scale(0.7);
-  }
-  
-  .linkedin-badge-wrapper:hover .LI-profile-badge {
-    transform: scale(0.75) translateY(-2px);
   }
 }
 
