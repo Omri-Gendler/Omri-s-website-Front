@@ -37,7 +37,7 @@ export function AboutUs() {
                             <div className="experience-content">
                                 <h3>IDF – 8200 - Technology and Maintenance Department</h3>
                                 <p>Led a team in the development and maintenance of technological systems</p>
-                                <p> Commander's Award of Excellence (2019)</p>
+                                <p> Commander's Award of Excellence 2019</p>
                             </div>
                         </div>
 
